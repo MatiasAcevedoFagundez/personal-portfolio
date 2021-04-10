@@ -1,32 +1,40 @@
-/* eslint-disable react/button-has-type */
 import React from 'react';
-import { FormattedMessage } from 'react-intl';
-import { useDispatch, useSelector } from 'react-redux';
-import messages from './messages';
-import actions from './store/actions';
+import Typical from 'react-typical';
+import Presentation from './Presentation';
+import AvatarContainer from './AvatarContainer';
+import avatar from '../../images/brand/avatar.png';
+import Avatar from './Avatar';
+import NameContainer from './NameContainer';
 
-const HomePage = () => {
-  const dispatch = useDispatch();
-
-  const isStoreConfig = useSelector(state => state.homePageReducer.status);
-
-  return (
-    <>
-      <h1>
-        <FormattedMessage {...messages.header} />
-      </h1>
-      <span>{isStoreConfig}</span>
-      <br />
-      <button
-        onClick={() =>
-          dispatch(actions.updateStatus.init('Status Actualizado'))
-        }
-      >
-        Update Status
-      </button>
-    </>
-  );
-};
+const HomePage = () => (
+  <>
+    <Presentation>
+      <NameContainer>
+        <h1>
+          Hi, I&apos;m
+          <Typical
+            steps={[
+              ' Matias Acevedo',
+              2000,
+              ' a Full Stack Developer',
+              2000,
+              ' a Student',
+              2000,
+              ' Matias Acevedo',
+              2000,
+            ]}
+            loop={1}
+            wrapper="bold"
+          />
+        </h1>
+      </NameContainer>
+      <AvatarContainer>
+        <Avatar src={avatar} alt="Matias Acevedo - avatar" />
+      </AvatarContainer>
+      <h2>I am passionate about what I do, and I want to keep learning.</h2>
+    </Presentation>
+  </>
+);
 
 HomePage.propTypes = {};
 
