@@ -1,16 +1,17 @@
 import React from 'react';
 import WorkCard from '../../components/WorkCard';
 import avatar from '../../images/brand/avatar.png';
-import Presentation from '../HomePage/Presentation';
+import TitleContainer from './TitleContainer';
 import CardContainer from './CardContainer';
+import Container from './Container';
 
 const MyWork = () => (
-  <>
-    <Presentation>
+  <Container>
+    <TitleContainer id="work">
       <h1>
         Some of my <bold>personal projects</bold>
       </h1>
-    </Presentation>
+    </TitleContainer>
     <CardContainer>
       <WorkCard
         image={avatar}
@@ -31,7 +32,7 @@ const MyWork = () => (
         url="https://www.freecodecamp.org/"
       />
     </CardContainer>
-  </>
+  </Container>
 );
 
 MyWork.propTypes = {};

@@ -9,18 +9,23 @@ import {
   NavLink,
 } from 'reactstrap';
 import PropTypes from 'prop-types';
+import { Link } from 'react-scroll';
 
 const links = [
-  { href: '/', text: 'Home' },
-  { href: '#about', text: 'About' },
-  { href: '/work', text: 'My Work' },
-  { href: '#contact', text: 'Contact Me' },
+  { href: 'about', text: 'About' },
+  { href: 'work', text: 'My Work' },
+  { href: 'contact', text: 'Contact Me' },
 ];
 
 const createNavItem = ({ href, text, className }) => (
   <NavItem>
-    <NavLink style={{ color: '#061a63' }} href={href} className={className}>
-      {text}
+    <NavLink
+      style={{ color: '#061a63', cursor: 'pointer' }}
+      className={className}
+    >
+      <Link to={href} smooth offset={-30}>
+        {text}
+      </Link>
     </NavLink>
   </NavItem>
 );

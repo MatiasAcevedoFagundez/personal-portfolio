@@ -37,6 +37,11 @@ const GlobalStyle = createGlobalStyle`
     font-size: 54px;
     font-weight: 300;
     line-height: 58px;
+    @media screen and (max-width: 767px) {
+      font-size: 44px;
+      font-weight: 300;
+      line-height: 50px;
+    }
   }
 
   bold {
@@ -52,6 +57,11 @@ const GlobalStyle = createGlobalStyle`
     font-size: 30px;
     font-weight: 200;
     line-height: 58px;
+    @media screen and (max-width: 767px) {
+      font-size: 22px;
+      font-weight: 200;
+      line-height: 35px;
+    }
   }
 `;
 
